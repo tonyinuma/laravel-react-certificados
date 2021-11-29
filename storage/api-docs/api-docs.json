@@ -102,6 +102,61 @@
                 },
                 "deprecated": false
             }
+        },
+        "/certificates/{id}": {
+            "put": {
+                "tags": [
+                    "Certificates"
+                ],
+                "summary": "Modifiy Certificates",
+                "operationId": "fb6c06038853ba8cf7de563012510d6b",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Certificate ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "course_id": {
+                                        "type": "string"
+                                    },
+                                    "certificate_date": {
+                                        "type": "date"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "course_id": "1",
+                                    "name": "Jhon Doe",
+                                    "certificate_date": "2021-11-29"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    }
+                },
+                "deprecated": false
+            }
         }
     },
     "components": {
