@@ -29,4 +29,13 @@ class Certificate extends Model
         'updated_at',
         'deleted_at'
     ];
+
+    public static function rules($update = false, $id = null)
+    {
+        return [
+            'course_id' => 'required',
+            'name' => 'required',
+            'certificate_date' => 'required',
+        ];
+    }
 }
