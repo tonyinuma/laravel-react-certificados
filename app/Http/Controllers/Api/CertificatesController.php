@@ -29,4 +29,11 @@ class CertificatesController extends Controller
         $certificates = Certificate::whereNull('deleted_at')->get();
         return response()->json($certificates);
     }
+
+    public function store(Request $request)
+    {
+        $this->validate($request, Certificate::rules());
+        $certificate = Certificate::create($request->all());
+        return response()->json($certificate);
+    }
 }
