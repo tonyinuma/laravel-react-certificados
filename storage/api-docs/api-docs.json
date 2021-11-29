@@ -47,7 +47,7 @@
         "/certificates": {
             "get": {
                 "tags": [
-                    "Home"
+                    "Certificates"
                 ],
                 "summary": "return certificates list",
                 "responses": {
@@ -56,6 +56,48 @@
                     },
                     "default": {
                         "description": "Something went wrong"
+                    }
+                },
+                "deprecated": false
+            },
+            "post": {
+                "tags": [
+                    "Certificates"
+                ],
+                "summary": "Store a Certificate",
+                "operationId": "cf74c9ca439d55af7fa9f94b61b9b88f",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "course_id": {
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "certificate_date": {
+                                        "type": "date"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "course_id": "1",
+                                    "name": "Jhon Doe",
+                                    "certificate_date": "2021-11-29"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Failed"
                     }
                 },
                 "deprecated": false
