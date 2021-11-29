@@ -9,7 +9,7 @@ class Certificate extends Model
 {
     use SoftDeletes;
 
-    protected $table = 'courses';
+    protected $table = 'certificates';
 
     protected $fillable = [
         'course_id',
