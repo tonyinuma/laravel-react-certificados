@@ -156,6 +156,33 @@
                     }
                 },
                 "deprecated": false
+            },
+            "delete": {
+                "tags": [
+                    "Certificates"
+                ],
+                "summary": "Delete a Certificate",
+                "operationId": "0ffea9d518b20c405a65d99f6bc3137d",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Certificate ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    }
+                },
+                "deprecated": false
             }
         }
     },

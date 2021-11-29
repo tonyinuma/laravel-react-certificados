@@ -162,4 +162,47 @@ class CertificatesController extends Controller
             'message' => 'Updated Successfully'
         ]);
     }
+
+    /**
+     * @OA\Delete(
+     *     path="/certificates/{id}",
+     *     summary="Delete a Certificate",
+     *     tags={"Certificates"},
+     *
+     *     @OA\Parameter(
+     *          name="id",
+     *          description="Certificate ID",
+     *          required=true,
+     *          in="path",
+     *          @OA\Schema(
+     *              type="string"
+     *          )
+     *      ),
+     *
+     *
+     *     @OA\Response(
+     *         response=200,
+     *         description="OK",
+     *     ),
+     *
+     *     @OA\Response(
+     *         response="400",
+     *         description="Failed",
+     *     ),
+     *
+     *     deprecated=false
+     * )
+     */
+    public function delete($id)
+    {
+        try {
+
+            $certificate = Certificate::destroy($id);
+
+        } catch (\Exception $exception) {
+            return $this->errorResponse($exception->getMessage(), 400);
+        }
+
+        return $this->successResponse("Certificate deleted");
+    }
 }
