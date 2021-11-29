@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Certificate;
+use App\Traits\ApiResponse;
 use Illuminate\Http\Request;
 
 class CertificatesController extends Controller
 {
+    use ApiResponse;
     /**
      * @OA\Get(
      *     path="/certificates",
@@ -27,13 +29,13 @@ class CertificatesController extends Controller
     public function list()
     {
         $certificates = Certificate::whereNull('deleted_at')->get();
-        return response()->json($certificates);
+        return $this->successResponse($certificates);
     }
 
     public function store(Request $request)
     {
         $this->validate($request, Certificate::rules());
         $certificate = Certificate::create($request->all());
-        return response()->json($certificate);
+        return $this->successResponse($certificate);
     }
 }
