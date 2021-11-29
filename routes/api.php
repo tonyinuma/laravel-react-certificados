@@ -20,6 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('certificates', [CertificatesController::class, 'list']);
+Route::get('certificates/{id}', [CertificatesController::class, 'find']);
 Route::post('certificates', [CertificatesController::class, 'store']);
 Route::put('certificates/{id}', [CertificatesController::class, 'update']);
 Route::delete('certificates/{id}', [CertificatesController::class, 'delete']);

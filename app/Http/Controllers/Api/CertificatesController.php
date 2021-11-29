@@ -35,6 +35,38 @@ class CertificatesController extends Controller
     }
 
     /**
+     * @OA\Get(
+     *     path="/certificates/{id}",
+     *     summary="return certificates by id",
+     *     tags={"Certificates"},
+     *
+     *     @OA\Parameter(
+     *          name="id",
+     *          description="Certificate ID",
+     *          required=true,
+     *          in="path",
+     *          @OA\Schema(
+     *              type="string"
+     *          )
+     *      ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Certificate By Id"
+     *     ),
+     *     @OA\Response(
+     *         response="default",
+     *         description="Something went wrong"
+     *     ),
+     *     deprecated=false
+     * )
+     */
+    public function find($id)
+    {
+        $certificate = Certificate::find($id);
+        return $this->successResponse($certificate);
+    }
+
+    /**
      * @OA\Post(
      *     path="/certificates",
      *     summary="Store a Certificate",

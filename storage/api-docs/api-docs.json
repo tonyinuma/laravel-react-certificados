@@ -104,6 +104,33 @@
             }
         },
         "/certificates/{id}": {
+            "get": {
+                "tags": [
+                    "Certificates"
+                ],
+                "summary": "return certificates by id",
+                "operationId": "5124ed9decc7f6ff86c9be7682a68354",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Certificate ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Certificate By Id"
+                    },
+                    "default": {
+                        "description": "Something went wrong"
+                    }
+                },
+                "deprecated": false
+            },
             "put": {
                 "tags": [
                     "Certificates"
