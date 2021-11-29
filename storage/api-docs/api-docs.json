@@ -1,0 +1,80 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "TestUsil2021",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://testusil2021.tk/api",
+            "description": "Test Usil",
+            "variables": {
+                "schema": {
+                    "enum": [
+                        "https",
+                        "http"
+                    ],
+                    "default": "http"
+                }
+            }
+        },
+        {
+            "url": "http://comicomerce.com/api",
+            "description": "comicomerce.com",
+            "variables": {
+                "schema": {
+                    "enum": [
+                        "http"
+                    ],
+                    "default": "http"
+                }
+            }
+        },
+        {
+            "url": "http://127.0.0.1/api",
+            "description": "localhost",
+            "variables": {
+                "schema": {
+                    "enum": [
+                        "http"
+                    ],
+                    "default": "http"
+                }
+            }
+        }
+    ],
+    "paths": {
+        "/certificates": {
+            "get": {
+                "tags": [
+                    "Home"
+                ],
+                "summary": "return certificates list",
+                "responses": {
+                    "200": {
+                        "description": "Certificates List"
+                    },
+                    "default": {
+                        "description": "Something went wrong"
+                    }
+                },
+                "deprecated": false
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "apiAuth": {
+                "type": "http",
+                "description": "login",
+                "name": "token",
+                "in": "header",
+                "bearerFormat": "JWT",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}
