@@ -24,6 +24,17 @@ class Controller extends BaseController
      *     bearerFormat="JWT",
      *     securityScheme="apiAuth"
      * )
+     * 
+     * @OA\Server(
+     *  url="http://laravelcertificados.com/api",
+     *  description="Certificados",
+     *
+     * @OA\ServerVariable(
+     *      serverVariable="schema",
+     *      enum={"https", "http"},
+     *      default="http"
+     *  )
+     * )
      *
      * @OA\Server(
      *      url="http://testusil2021.tk/api",

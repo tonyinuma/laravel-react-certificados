@@ -6,6 +6,19 @@
     },
     "servers": [
         {
+            "url": "http://laravelcertificados.com/api",
+            "description": "Certificados",
+            "variables": {
+                "schema": {
+                    "enum": [
+                        "https",
+                        "http"
+                    ],
+                    "default": "http"
+                }
+            }
+        },
+        {
             "url": "http://testusil2021.tk/api",
             "description": "Test Usil",
             "variables": {
